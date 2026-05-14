@@ -95,7 +95,7 @@ async function downloadAndExtractZip() {
 
         const zip = new AdmZip(tempZipPath);
         zip.extractAllTo(ZIP_DIR, true);
-        console.log('Plugins extracted successfully ✅');
+        console.log('\x1b[32m%s\x1b[0m', 'Plugins extracted successfully ✅');
         fs.unlinkSync(tempZipPath);
 
     } catch (error) {
@@ -112,8 +112,8 @@ await downloadAndExtractZip();
 
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
 const { sms, downloadMediaMessage } = require('./lib/msg')
-
-console.log("Connecting SANDES MD 🧬...");
+    
+console.log('\x1b[34m%s\x1b[0m', 'Connecting SANDES MD ⚡ ...');
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
