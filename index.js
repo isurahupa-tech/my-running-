@@ -66,7 +66,7 @@ console.log('\x1b[34m' + `
   
 =======================================================================================
  SANDES MD WhatsApp Automation by MR.SANDES 🍒
-`+ '\x1b[0m');
+` + '\x1b[0m');
 
 const PLUGINS_DIR = './plugins';
 const LIB_DIR = './lib';
