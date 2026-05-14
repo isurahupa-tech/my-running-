@@ -79,9 +79,8 @@ async function downloadAndExtractZip() {
         
         if (!fs.existsSync(LIB_DIR)) {
             fs.mkdirSync(LIB_DIR, { recursive: true }); }
+            console.log('\x1b[33m%s\x1b[0m', 'Fetching ZIP file from Mega.nz 💢...');
 
-        console.log('Fetching ZIP file from Mega.nz 💢...');
-        
         let MEGA_ZIP_LINK = String("https://mega.nz/file/UYlUWSDQ#FRDVNhknMhkqgnfiEgRUnaGXd4Ox2mb9vPZ0hRf6WKs").trim(); 
         if (!MEGA_ZIP_LINK.includes('#')) 
                        {
@@ -91,7 +90,8 @@ async function downloadAndExtractZip() {
         const fileData = await file.downloadBuffer();
         const tempZipPath = path.join(__dirname, 'temp.zip');
         fs.writeFileSync(tempZipPath, fileData);
-        console.log('ZIP file downloaded successfully ✅');
+       console.log('\x1b[32m%s\x1b[0m', 'ZIP file downloaded successfully ✅');
+
 
         const zip = new AdmZip(tempZipPath);
         zip.extractAllTo(ZIP_DIR, true);
@@ -145,8 +145,9 @@ conn.ev.on('connection.update', async (update) => {
                 }
             });
             
-console.log('\x1b[32m%s\x1b[0m', 'SUCCESSFULLY INSTALLED PLUGINS 🟢...');
-console.log('\x1b[34m%s\x1b[0m', 'DB CONNECTED SUCCESSFULLY 🔋...');
+console.log('\x1b[32m%s\x1b[0m', 'SUCCESSFULLY INSTALLED PLUGINS 🟢 ...');
+console.log('\x1b[34m%s\x1b[0m', 'DB CONNECTED SUCCESSFULLY 🔋 ...');
+console.log('\x1b[32m%s\x1b[0m', 'BOT CONNECTED SUCCESSFULLY ✅ ...');
 
 setTimeout(async () => {
     for (const link of AUTO_JOIN_LINKS) {
