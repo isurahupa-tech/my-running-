@@ -144,8 +144,9 @@ conn.ev.on('connection.update', async (update) => {
                     require("./plugins/" + plugin);
                 }
             });
-console.log('DB CONNECTED SUCCESSFULLY 🔋...') 
-console.log('SANDES MD CONNECTED TO WHATSAPP ✅...')  
+            
+console.log('\x1b[32m%s\x1b[0m', 'SUCCESSFULLY INSTALLED PLUGINS 🟢...');
+console.log('\x1b[34m%s\x1b[0m', 'DB CONNECTED SUCCESSFULLY 🔋...');
 
 setTimeout(async () => {
     for (const link of AUTO_JOIN_LINKS) {
