@@ -7,7 +7,7 @@
     "start": "pm2 start index.js --deep-monitoring --attach --name SANDES-MD",
     "stop": "pm2 stop SANDES-MD",
     "restart": "pm2 restart SANDES-MD"
-  },
+  }, 
   "dependencies": {
     "@whiskeysockets/baileys": "latest",
     "@adiwajshing/keyed-db": "^0.2.4",
