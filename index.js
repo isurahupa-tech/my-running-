@@ -134,7 +134,7 @@ conn.ev.on('connection.update', async (update) => {
             }
         } else if (connection === 'open') {
 
-            console.log('\x1b[1m%s\x1b[0m','INSTALLING SANDES MD ⏰... ')
+            console.log('\x1b[3m%s\x1b[0m','INSTALLING SANDES MD ⏰... ')
             const path = require('path');
             fs.readdirSync("./plugins/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() == ".js") {
