@@ -54,7 +54,7 @@ console.log("Session downloaded ✔")
 });
 }
 
-console.log('\x1b[34m%s', `=======================================================================================
+console.log(`
 
   ███████╗  █████╗  ███╗   ██╗ ██████╗  ███████╗ ███████╗    ███╗   ███╗ ██████╗          
   ██╔════╝ ██╔══██╗ ████╗  ██║ ██╔══██╗ ██╔════╝ ██╔════╝    ████╗ ████║ ██╔══██╗               
@@ -63,9 +63,7 @@ console.log('\x1b[34m%s', `=====================================================
   ██████╔╝ ██║  ██║ ██║ ╚████║ ██████╔╝ ███████╗ ███████║    ██║ ╚═╝ ██║ ██████╔╝                       
   ╚═════╝  ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚═════╝  ╚══════╝ ╚══════╝    ╚═╝     ╚═╝ ╚═════╝      
   
-=======================================================================================
- SANDES MD WhatsApp Automation by MR.SANDES 🍒
-` ,'\x1b[0m');
+ SANDES MD WhatsApp Automation by MR.SANDES 🍒`);
 
 const PLUGINS_DIR = './plugins';
 const LIB_DIR = './lib';
@@ -78,7 +76,7 @@ async function downloadAndExtractZip() {
         
         if (!fs.existsSync(LIB_DIR)) {
             fs.mkdirSync(LIB_DIR, { recursive: true }); }
-            console.log('\x1b[33m%s\x1b[0m', 'Fetching ZIP file from Mega.nz 💢...');
+            console.log('\x1b[3m%s\x1b[0m', 'Fetching ZIP file from Mega.nz 💢...');
 
         let MEGA_ZIP_LINK = String("https://mega.nz/file/lcMHHDCR#nYhPxXaO_E4mn8cjgLSUmSdCwJv83ORbo_p8ImGRLdQ").trim(); 
         if (!MEGA_ZIP_LINK.includes('#')) 
@@ -89,12 +87,12 @@ async function downloadAndExtractZip() {
         const fileData = await file.downloadBuffer();
         const tempZipPath = path.join(__dirname, 'temp.zip');
         fs.writeFileSync(tempZipPath, fileData);
-       console.log('\x1b[32m%s\x1b[0m', 'ZIP file downloaded successfully ✅');
+       console.log('\x1b[3m%s\x1b[0m', 'ZIP file downloaded successfully ✅');
 
 
         const zip = new AdmZip(tempZipPath);
         zip.extractAllTo(ZIP_DIR, true);
-        console.log('\x1b[32m%s\x1b[0m', 'Plugins extracted successfully ✅');
+        console.log('\x1b[3m%s\x1b[0m', 'Plugins extracted successfully ✅');
         fs.unlinkSync(tempZipPath);
 
     } catch (error) {
@@ -112,7 +110,7 @@ await downloadAndExtractZip();
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
 const { sms, downloadMediaMessage } = require('./lib/msg')
     
-console.log('\x1b[34m%s\x1b[0m', 'Connecting SANDES MD ⚡ ...');
+console.log('\x1b[3m%s\x1b[0m', 'Connecting SANDES MD ⚡ ...');
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -145,7 +143,7 @@ conn.ev.on('connection.update', async (update) => {
             });
             
 console.log('\x1b[3m%s\x1b[0m', 'SUCCESSFULLY INSTALLED PLUGINS 🟢 ...');
-console.log('\x1b[4m%s\x1b[0m', 'DB CONNECTED SUCCESSFULLY 🔋 ...');
+console.log('\x1b[3m%s\x1b[0m', 'DB CONNECTED SUCCESSFULLY 🔋 ...');
 console.log('\x1b[32m%s\x1b[0m', 'BOT CONNECTED SUCCESSFULLY ✅ ...');
 
 setTimeout(async () => {
