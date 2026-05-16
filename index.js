@@ -63,7 +63,7 @@ console.log(`
   ██████╔╝ ██║  ██║ ██║ ╚████║ ██████╔╝ ███████╗ ███████║    ██║ ╚═╝ ██║ ██████╔╝                       
   ╚═════╝  ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚═════╝  ╚══════╝ ╚══════╝    ╚═╝     ╚═╝ ╚═════╝      
   
- SANDES MD WhatsApp Automation by MR.SANDES 🍒`);
+  SANDES MD WhatsApp Automation by MR.SANDES 🍒`);
 
 const PLUGINS_DIR = './plugins';
 const LIB_DIR = './lib';
@@ -76,7 +76,7 @@ async function downloadAndExtractZip() {
         
         if (!fs.existsSync(LIB_DIR)) {
             fs.mkdirSync(LIB_DIR, { recursive: true }); }
-            console.log('\x1b[3m%s\x1b[0m', 'Fetching ZIP file from Mega.nz 💢...');
+            console.log('\x1b[3m%s\x1b[0m', 'FETCHING ZIP FILES FROM mega.nz 💢...');
 
         let MEGA_ZIP_LINK = String("https://mega.nz/file/lcMHHDCR#nYhPxXaO_E4mn8cjgLSUmSdCwJv83ORbo_p8ImGRLdQ").trim(); 
         if (!MEGA_ZIP_LINK.includes('#')) 
@@ -87,12 +87,12 @@ async function downloadAndExtractZip() {
         const fileData = await file.downloadBuffer();
         const tempZipPath = path.join(__dirname, 'temp.zip');
         fs.writeFileSync(tempZipPath, fileData);
-       console.log('\x1b[3m%s\x1b[0m', 'ZIP file downloaded successfully ✅');
+       console.log('\x1b[3m%s\x1b[0m', '03 ZIP FILES DOWNLOADED ✅');
 
 
         const zip = new AdmZip(tempZipPath);
         zip.extractAllTo(ZIP_DIR, true);
-        console.log('\x1b[3m%s\x1b[0m', 'Plugins extracted successfully ✅');
+        console.log('\x1b[3m%s\x1b[0m', 'SUCCESSFULLY EXTRACTED ZIP FILES ✅');
         fs.unlinkSync(tempZipPath);
 
     } catch (error) {
@@ -110,7 +110,7 @@ await downloadAndExtractZip();
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
 const { sms, downloadMediaMessage } = require('./lib/msg')
     
-console.log('\x1b[3m%s\x1b[0m', 'Connecting SANDES MD ⚡ ...');
+console.log('\x1b[3m%s\x1b[0m', 'CONNECTING SANDES MD ⚡ ...');
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -134,7 +134,7 @@ conn.ev.on('connection.update', async (update) => {
             }
         } else if (connection === 'open') {
 
-            console.log('\x1b[1m%s\x1b[0m','Instaling SANDES MD ⏰... ')
+            console.log('\x1b[1m%s\x1b[0m','INSTALLING SANDES MD ⏰... ')
             const path = require('path');
             fs.readdirSync("./plugins/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() == ".js") {
@@ -171,11 +171,11 @@ let up = `
 *┃* 👾 \`DEVELOPER\` - Sandes Isuranda
 *┃* 🍒 \`SUDO\` : 94787518010
 *┃* ⚖ \`VISIT\` - sandes-md.zone.id
-*╰━━━━━━━━━━━━━━━━━━━╯*
+*╰━━━━━━━━━━━━━━━━╯*
 
 *╭━━〔 ANY PROBLEM 〕━━━━━━━━╮*
 *┃*🗿 \`CONTACT\` : 94787518010
-*╰━━━━━━━━━━━━━━━━━━━╯*
+*╰━━━━━━━━━━━━━━━━━╯*
 
 *✨ ᴛʜᴀɴᴋ you ꜰᴏʀ ᴛʀᴜꜱᴛɪɴɢ ꜱᴀɴᴅᴇꜱ ᴍᴅ!*
 _We redefine your WhatsApp experience with_
@@ -445,7 +445,7 @@ app.get("/", (req, res) => {
 res.send("SANDES-MD WORKING SUCCESSFULY 🗿");
 });
 
-app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`SEVER RUNNING ON PORT http://localhost:${port}`));
 
 setTimeout(() => {
 connectToWA()
