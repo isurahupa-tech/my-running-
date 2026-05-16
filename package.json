@@ -21,6 +21,7 @@
     "pm2": "^7.0.1",
     "ffmpeg-static":"latest",
     "util": "^0.12.4",
+    "api-dylux": "*",
     "express": "latest",
     "async-g-i-s": "^1.4.0",
     "file-type": "^16.5.3",
